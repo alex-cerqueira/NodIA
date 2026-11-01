@@ -1,0 +1,25 @@
+/* Nodia — base: reset mínimo e utilitários compartilhados pelos componentes. */
+.nd-root, .nd-root *, [class^='nd-'], [class*=' nd-'] { box-sizing: border-box; }
+
+.nd-root {
+  background: var(--bg);
+  color: var(--ink);
+  font: var(--font-body-md);
+}
+
+/* Foco visível padrão (WCAG 2.4.7). O Figma ainda não define estado de foco para todos os componentes. */
+.nd-focusable:focus-visible,
+:where([class^='nd-'], [class*=' nd-']):focus-visible,
+:where([class^='nd-'], [class*=' nd-']) :focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.nd-visually-hidden {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [class^='nd-'], [class*=' nd-'] { transition-duration: 1ms !important; animation-duration: 1ms !important; }
+}

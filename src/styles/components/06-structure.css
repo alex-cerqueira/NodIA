@@ -1,0 +1,30 @@
+/* Estrutura: Grid, Divider, Logo, Footer */
+
+/* Grid — breakpoints ≥1024 (12 col), 640–1023 (8 col), <640 (4 col). Os pontos de quebra são uma suposição. */
+.nd-grid { --nd-cols: 12; --nd-gutter: 24px; --nd-margin: 64px; display: grid; grid-template-columns: repeat(var(--nd-cols), minmax(0, 1fr)); column-gap: var(--nd-gutter); }
+.nd-grid--margin { padding-inline: var(--nd-margin); }
+@media (max-width: 1023px) { .nd-grid { --nd-cols: 8; --nd-gutter: 20px; --nd-margin: 40px; } }
+@media (max-width: 639px) { .nd-grid { --nd-cols: 4; --nd-gutter: 16px; --nd-margin: 20px; } }
+.nd-grid__item { --nd-span: 1; --nd-start: auto; grid-column: var(--nd-start) / span min(var(--nd-span), var(--nd-cols)); }
+
+/* Divider */
+.nd-divider { background: var(--line); flex: none; }
+.nd-divider--horizontal { height: 1px; width: 100%; border: 0; margin: 0; }
+.nd-divider--vertical { width: 1px; align-self: stretch; min-height: 40px; }
+
+/* Logo */
+.nd-logo { display: inline-flex; align-items: center; color: var(--logo-ink); }
+.nd-logo__word { display: inline-flex; align-items: flex-end; gap: var(--space-1); font: var(--font-heading-h2); letter-spacing: var(--ls-heading-h2); }
+.nd-logo__dot { width: 7px; height: 7px; margin-bottom: 9px; border-radius: 50%; background: var(--accent); }
+.nd-logo--symbol { width: 40px; height: 40px; justify-content: center; border-radius: var(--radius-sm); background: var(--logo-ink); color: var(--bg); font: var(--font-heading-h4); }
+
+/* Footer */
+.nd-footer { display: flex; flex-direction: column; gap: var(--space-6); padding: var(--space-6) var(--space-5); background: var(--bg); color: var(--ink); box-shadow: inset 0 1px 0 var(--line); }
+.nd-footer__top { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: var(--space-7); }
+.nd-footer__groups { display: flex; flex-wrap: wrap; gap: var(--space-7); }
+.nd-footer__group-title { margin: 0 0 var(--space-2); font: var(--font-label-mono); letter-spacing: var(--ls-label-mono); text-transform: uppercase; color: var(--mute); }
+.nd-footer__links { display: flex; flex-direction: column; gap: var(--space-2); list-style: none; margin: 0; padding: 0; }
+.nd-footer__link { font: var(--font-body-sm); color: var(--ink); text-decoration: none; }
+.nd-footer__link:hover { text-decoration: underline; }
+.nd-footer__bottom { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-4); }
+.nd-footer__legal { margin: 0; font: var(--font-caption-mono); letter-spacing: var(--ls-caption-mono); text-transform: uppercase; color: var(--mute); }

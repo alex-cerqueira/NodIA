@@ -1,0 +1,56 @@
+/* Ações: Button, Icon Button, Link, Button Group, Theme Toggle */
+
+/* Button */
+.nd-button {
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 0; cursor: pointer; text-decoration: none;
+  color: var(--ink); background: transparent;
+  border-radius: var(--radius-sm);
+  transition: opacity var(--dur-1) var(--ease), background-color var(--dur-1) var(--ease);
+}
+.nd-button--md { padding: var(--space-2) var(--space-4); font: var(--font-body-md); }
+.nd-button--sm { padding: var(--space-1) var(--space-3); font: var(--font-body-sm); }
+.nd-button--primary { background: var(--accent); color: var(--accent-on); }
+.nd-button--primary:hover:not(:disabled) { opacity: 0.88; }
+.nd-button--secondary { box-shadow: inset 0 0 0 1px var(--line); }
+.nd-button--secondary:hover:not(:disabled),
+.nd-button--ghost:hover:not(:disabled) { background: var(--bg-subtle); }
+.nd-button:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* Icon Button */
+.nd-icon-button {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; padding: 0; border: 0; cursor: pointer;
+  border-radius: var(--radius-sm); color: var(--ink); background: transparent;
+  font: var(--font-heading-h4);
+  transition: opacity var(--dur-1) var(--ease), background-color var(--dur-1) var(--ease);
+}
+.nd-icon-button--primary { background: var(--accent); color: var(--accent-on); }
+.nd-icon-button--primary:hover:not(:disabled) { opacity: 0.88; }
+.nd-icon-button--secondary { box-shadow: inset 0 0 0 1px var(--line); }
+.nd-icon-button--secondary:hover:not(:disabled),
+.nd-icon-button--ghost:hover:not(:disabled) { background: var(--bg-subtle); }
+.nd-icon-button:disabled { opacity: 0.4; cursor: not-allowed; }
+.nd-icon-button__icon { display: inline-flex; line-height: 1; }
+
+/* Link */
+.nd-link {
+  font: var(--font-body-md); color: var(--ink);
+  text-decoration: underline; text-underline-offset: 3px;
+  transition: color var(--dur-1) var(--ease);
+}
+.nd-link:hover { color: var(--accent); }
+.nd-link--disabled { opacity: 0.4; cursor: not-allowed; pointer-events: none; }
+
+/* Button Group */
+.nd-button-group { display: inline-flex; flex-wrap: nowrap; gap: var(--space-2); align-items: center; }
+
+/* Theme Toggle */
+.nd-theme-toggle {
+  display: inline-flex; align-items: center; justify-content: flex-start;
+  width: 56px; height: 28px; padding: 0 var(--space-1); cursor: pointer;
+  border: 0; border-radius: var(--radius-full);
+  background: var(--bg-subtle); box-shadow: inset 0 0 0 1px var(--line);
+}
+.nd-theme-toggle[data-mode='dark'] { justify-content: flex-end; }
+.nd-theme-toggle__knob { width: 20px; height: 20px; border-radius: 50%; background: var(--accent); }
